@@ -1,76 +1,85 @@
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #0b3d91, #e60c2c);
-    color: #f0f0f0;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-  }
-  
-  .container {
-    width: 90%;
-    max-width: 600px;
-  }
-  
-  .card {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    border-radius: 20px;
-    padding: 30px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.3);
-    text-align: center;
-    animation: fadeIn 0.6s ease-in-out;
-  }
-  
-  .hidden {
-    display: none;
-  }
-  
-  button {
-    background-color: #e60c2c;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 10px;
-    margin-top: 20px;
-    cursor: pointer;
-    font-size: 1rem;
-  }
-  
-  button:disabled {
-    background-color: gray;
-  }
-  
-  .progress {
-    background-color: #ccc;
-    height: 10px;
-    border-radius: 5px;
-    overflow: hidden;
-    margin-bottom: 20px;
-  }
-  
-  #progress-bar {
-    height: 10px;
-    background-color: #0b3d91;
-    width: 0%;
-    transition: width 0.3s ease-in-out;
-  }
-  
-  #answers button {
-    display: block;
-    margin: 10px auto;
-    background-color: #0b3d91;
-  }
-  
-  img {
-    max-width: 100%;
-    border-radius: 10px;
-  }
-  
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.container {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 90%;
+}
+
+.card {
+  display: none;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+  text-align: center;
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+.card:not(.hidden) {
+  display: block;
+}
+
+.hidden {
+  display: none;
+}
+
+button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-top: 20px;
+}
+
+button:disabled {
+  background-color: #ccc;
+}
+
+.progress {
+  height: 10px;
+  background: #e0e0e0;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+#progress-bar {
+  height: 100%;
+  background: #007bff;
+  width: 0;
+  transition: width 0.3s;
+}
+
+#answers button {
+  display: block;
+  margin: 10px auto;
+  background-color: #0b3d91;
+}
+
+img {
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
