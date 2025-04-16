@@ -79,11 +79,14 @@ const questions = [
 
     // Ajuste a lógica para determinar o resultado com base no score
     let result;
-    if (score < 5) {
+    const maxScore = questions.length * 3; // Pontuação máxima possível (índice máximo + 1)
+    const range = maxScore / results.length; // Divide a pontuação em intervalos iguais
+
+    if (score < range) {
       result = results[0]; // Violão
-    } else if (score < 10) {
+    } else if (score < range * 2) {
       result = results[1]; // Bateria
-    } else if (score < 15) {
+    } else if (score < range * 3) {
       result = results[2]; // Saxofone
     } else {
       result = results[3]; // Teclado
