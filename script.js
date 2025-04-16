@@ -30,7 +30,6 @@ const questions = [
     {
       title: "Teclado",
       img: "https://thumbs.dreamstime.com/z/teclado-musical-17323478.jpg",
-
       desc: "Você gosta de variedade e criatividade. O teclado te dá liberdade para explorar diversos estilos."
     }
   ];
@@ -60,7 +59,7 @@ const questions = [
   }
   
   function selectAnswer(index) {
-    score += index;
+    score += index + 1; // Incrementa o score com base no índice da resposta
     document.querySelectorAll("#answers button").forEach(btn => btn.disabled = true);
     document.getElementById("nextBtn").disabled = false;
   }
@@ -77,7 +76,19 @@ const questions = [
   function showResult() {
     document.getElementById("quiz").classList.add("hidden");
     document.getElementById("result").classList.remove("hidden");
-    const result = results[score % results.length];
+
+    // Ajuste a lógica para determinar o resultado com base no score
+    let result;
+    if (score < 5) {
+      result = results[0]; // Violão
+    } else if (score < 10) {
+      result = results[1]; // Bateria
+    } else if (score < 15) {
+      result = results[2]; // Saxofone
+    } else {
+      result = results[3]; // Teclado
+    }
+
     document.getElementById("result-title").textContent = result.title;
     document.getElementById("result-img").src = result.img;
     document.getElementById("result-desc").textContent = result.desc;
