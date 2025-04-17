@@ -24,13 +24,14 @@ body {
 
 .card {
   display: none;
-  background: rgba(255, 255, 255, 0.9); /* Fundo branco translúcido */
-  backdrop-filter: blur(10px);
+  background: rgba(0, 0, 0, 0.8); /* Fundo preto translúcido */
+  backdrop-filter: blur(10px); /* Efeito de desfoque */
   border-radius: 20px;
   padding: 30px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2); /* Brilho ao redor */
   text-align: center;
   animation: fadeIn 0.6s ease-in-out;
+  color: #ffffff; /* Texto branco */
 }
 
 .card:not(.hidden) {
@@ -85,18 +86,19 @@ button:disabled {
 #answers button {
   display: block;
   margin: 10px auto;
-  background-color: #0b3d91; /* Azul vibrante */
-  color: #ffffff; /* Branco */
-  border: none;
+  background-color: rgba(255, 255, 255, 0.2); /* Fundo branco translúcido */
+  color: #ffffff; /* Texto branco */
+  border: 1px solid #ffffff; /* Borda branca */
   padding: 10px;
   border-radius: 5px;
   font-size: 14px;
   font-weight: bold;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 #answers button:hover {
-  background-color: #002868; /* Azul escuro */
+  background-color: rgba(255, 255, 255, 0.4); /* Fundo mais claro ao passar o mouse */
+  transform: scale(1.05); /* Leve aumento ao passar o mouse */
 }
 
 img {
